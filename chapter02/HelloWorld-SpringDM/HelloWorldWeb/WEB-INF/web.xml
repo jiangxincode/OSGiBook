@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app  xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+	<display-name>Simple Osgi WebApp Bundle</display-name>
+	<description>Simple OSGi War</description>
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+	</welcome-file-list>
+
+	<servlet>
+		<servlet-name>HelloWorldServlet</servlet-name>
+		<servlet-class>
+			org.osgichina.demo.web.HelloWorldServlet
+		</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>HelloWorldServlet</servlet-name>
+		<url-pattern>/hello</url-pattern>
+	</servlet-mapping>
+	<context-param>
+		<param-name>contextClass</param-name>　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+　　		<param-value>org.springframework.osgi.web.context.support.OsgiBundleXmlWebApplicationContext</param-value>　　
+　　</context-param>
+　　<listener>
+　　		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>　　　　　　　　　　　　
+　　</listener>	
+</web-app>

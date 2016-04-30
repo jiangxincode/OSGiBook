@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
+  default-autowire="byName">
+	
+	<bean name="_menuItem" class="org.osgichina.petstore.productmanagement.menuitem.MenuItemImpl"/>
+
+	<bean name="_defaultPage" class="org.osgichina.petstore.productmanagement.pagetemplate.ProductManagementDefaultPage" />
+
+	<bean name="productListActionHandler" class="org.osgichina.petstore.productmanagement.actionhandler.ProductListActionHandler" />
+	
+	<bean name="categoryListActionHandler" class="org.osgichina.petstore.productmanagement.actionhandler.CategoryListActionHandler" />
+	
+	<bean name="_actionHandlerMap" class="org.osgichina.petstore.bootstrap.actionhandler.DefaultActionHandlerMap">
+		<property name="actionHandlerMap">
+			<map>
+				<entry key="productmanagement" >
+					<ref bean="categoryListActionHandler"/>
+				</entry>
+				<entry key="productmanagement/product_list" >
+					<ref bean="productListActionHandler"/>
+				</entry>
+			</map>
+		</property>
+	</bean>
+		
+	<bean name="webResourceMgr" class="org.osgichina.petstore.util.WebResourceMgr"
+		init-method="start">
+		<property name="relativeResourcePath" value="productmanagement"/>
+		<property name="name" value="productmanagement"/>
+	</bean>
+</beans>

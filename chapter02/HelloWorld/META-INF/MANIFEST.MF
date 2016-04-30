@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: HelloWorld Plug-in
+Bundle-SymbolicName: HelloWorld
+Bundle-Version: 1.0.0
+Bundle-Activator: org.osgichina.demo.HelloWorldActivator
+Bundle-Vendor: OSGiChina
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Import-Package: org.osgi.framework;version="1.3.0"

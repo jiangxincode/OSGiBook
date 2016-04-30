@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--定义Servlet组件 -->
+<component name="DictQueryServlet">
+    <!--定义组件的实现类 -->
+	<implementation class="org.osgichina.demo.dictqueryweb.servlet.DictQueryServlet"/>
+	<!--设置引用的QueryService -->
+	<reference name="QueryService" interface="org.osgichina.demo.dictquery.query.QueryService" bind="setQueryService" unbind="unsetQueryService" policy="dynamic" cardinality="0..1"/>
+	<!--设置引用的HttpService -->
+	<reference name="HttpService" interface="org.osgi.service.http.HttpService" bind="setHttpService" unbind="unsetHttpService" policy="dynamic"/>
+</component>

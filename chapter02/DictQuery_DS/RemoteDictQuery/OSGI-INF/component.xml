@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 定义DictQueryService -->
+<component name="DictQueryService">
+	<!-- 定义组件的实现类 -->
+	<implementation class="org.osgichina.demo.remotedictquery.impl.RemoteDictQueryServiceImpl"/>
+	<!-- 定义组件实现的接口-->
+	<service>
+		<provide interface="org.osgichina.demo.dictquery.query.QueryService"/>
+	</service>
+</component>

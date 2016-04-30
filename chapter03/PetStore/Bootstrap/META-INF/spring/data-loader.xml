@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://toolkit.alibaba-inc.com/dtd/spring/spring-beans.dtd">
+<beans>
+    <!-- ======================================================================== -->
+    <!--  初始化表结构，装入范例数据。                                            -->
+    <!-- ======================================================================== -->
+    <bean id="dataLoader" class="org.osgichina.petstore.bootstrap.dal.util.DataLoader">
+        <property name="autoLoad" value="true" />
+        <property name="autoDrop" value="false" />
+        <property name="dataSource" ref="_dataSource" />
+        <property name="sqlSchemaDrop" value="/META-INF/resources/sql/petstore-hsqldb-schema-drop.sql" />
+        <property name="sqlSchema" value="/META-INF/resources/sql/petstore-hsqldb-schema.sql" />
+        <property name="sqlDataLoad" value="/META-INF/resources/sql/petstore-hsqldb-dataload.sql" />
+    </bean>
+</beans>

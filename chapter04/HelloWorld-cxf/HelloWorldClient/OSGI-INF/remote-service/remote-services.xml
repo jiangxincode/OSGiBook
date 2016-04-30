@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<service-descriptions xmlns="http://www.osgi.org/xmlns/sd/v1.0.0">
+  <!--远程服务描述-->
+  <service-description>
+    <!--定义远程服务映射到本地的服务的接口 -->
+    <provide interface="org.osgichina.helloworldcxf.HelloWorldService" />
+    <!-- 远程服务的接口 -->
+    <property name="osgi.remote.interfaces">*</property>
+    <!-- 服务的类型-->
+    <property name="osgi.remote.configuration.type">pojo</property>
+    <!-- 服务的地址-->
+    <property name="osgi.remote.configuration.pojo.address">http://localhost:9000/hello_world</property>
+  </service-description>
+</service-descriptions>

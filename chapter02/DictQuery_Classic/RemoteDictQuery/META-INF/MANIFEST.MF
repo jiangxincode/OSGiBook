@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: RemoteDictQuery Plug-in
+Bundle-SymbolicName: RemoteDictQuery
+Bundle-Version: 1.0.0
+Bundle-Activator: org.osgichina.demo.remotedictquery.Activator
+Bundle-Vendor: OSGiChina
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Import-Package: org.osgi.framework;version="1.3.0",
+ org.osgichina.demo.dictquery.query
+Bundle-ClassPath: bin/,
+ lib/junit.jar

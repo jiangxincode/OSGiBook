@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
+  default-autowire="byName">
+	<bean name="_productDao" class="org.osgichina.petstore.productdal.dao.impl.ProductDaoImpl"/>
+	
+	<bean name="_categoryDao" class="org.osgichina.petstore.productdal.dao.impl.CategoryDaoImpl"/>
+	
+	<bean name="_itemDao" class="org.osgichina.petstore.productdal.dao.impl.ItemDaoImpl" />
+    <!-- ======================================================================== -->
+    <!--  用纯JDBC实现DAO的相关设置。                                       -->
+    <!-- ======================================================================== -->
+    <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate"/>
+
+</beans>

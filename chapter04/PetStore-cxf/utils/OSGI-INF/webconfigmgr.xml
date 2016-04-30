@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="WebConfigMgr">
+	<implementation class="org.osgichina.petstore.util.WebConfigMgrImpl"/>
+	<service>
+		<provide interface="org.osgichina.petstore.util.WebConfigMgr"/>
+	</service>
+</component>

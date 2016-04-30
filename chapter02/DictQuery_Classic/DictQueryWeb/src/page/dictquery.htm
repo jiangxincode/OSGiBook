@@ -1,0 +1,32 @@
+<HTML>
+<HEAD>
+<TITLE>OSGi Dictionary Query Demo</TITLE>
+<meta http-equiv="Content-Type" content="text/html;charset=GBK" /> 
+<script>
+
+	function queryWord(){
+		if(document.frmCalc.query_word.value==""){
+			alert("必须输入单词");
+			document.frmCalc.word.focus();
+			return;
+		}
+		document.frmCalc.submit();
+	}
+
+</script>
+</HEAD>
+
+<BODY>
+<table style="width:100px;border:1px solid;height:100px">
+	<form name=frmCalc method="post" action="/demo/dictquery">
+		<tr bgcolor="#C0C0C0">
+			<td colspan="4" align="center">DictQuery示例</td>
+		</tr>
+		<tr>
+			<td><input type="text" name="query_word" size="20"></td>
+			<td><input type=button name=btnSubmit value="查询" onclick="queryWord();"></td>
+		</tr>
+	</form>
+</table>
+</BODY>
+</HTML>

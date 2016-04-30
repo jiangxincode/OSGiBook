@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: HelloWorldClient Plug-in
+Bundle-SymbolicName: HelloWorldClient
+Bundle-Version: 1.0.0
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Import-Package: org.osgi.framework;version="1.5.0",
+ org.osgi.util.tracker;version="1.4.2",
+ org.osgichina.helloworldcxf
+Bundle-Activator: org.osgichina.helloworldcxf.client.Activator

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
+  default-autowire="byName">
+
+	<bean name="controlServlet" class="org.osgichina.petstore.bootstrap.ControllerServlet" 
+		init-method="start">
+		<property name="servletPath" value="/petstore/app"/>
+		<property name="resourcePath" value="/petstore/resource"/>
+	</bean>
+	
+  	<bean name="pageHeader" class="org.osgichina.petstore.bootstrap.pagetemplate.impl.PageHeaderImpl" />
+	<bean name="pageFooter" class="org.osgichina.petstore.bootstrap.pagetemplate.impl.PageFooterImpl" />
+	
+	<bean name="webResourceMgr" class="org.osgichina.petstore.util.WebResourceMgr"
+		init-method="start">
+		<property name="relativeResourcePath" value="home"/>
+		<property name="name" value="home"/>
+	</bean>
+
+</beans>

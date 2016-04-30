@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: ProductList Plug-in
+Bundle-SymbolicName: ProductList
+Bundle-Version: 1.0.0
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Import-Package: javax.servlet.http;version="2.4.0",
+ org.osgi.service.http;version="1.2.0",
+ org.osgichina.petstore.bootstrap.actionhandler,
+ org.osgichina.petstore.bootstrap.menu,
+ org.osgichina.petstore.bootstrap.pagetemplate,
+ org.osgichina.petstore.productdal.dao,
+ org.osgichina.petstore.productdal.dataobject,
+ org.osgichina.petstore.shoppingcartdal.dao,
+ org.osgichina.petstore.util
+Require-Bundle: javax.servlet;bundle-version="2.4.0"

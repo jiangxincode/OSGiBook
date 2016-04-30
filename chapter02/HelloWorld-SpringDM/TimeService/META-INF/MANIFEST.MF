@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: TimeService Plug-in
+Bundle-SymbolicName: TimeService
+Bundle-Version: 1.0.0
+Bundle-Vendor: OSGiChina
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Export-Package: org.osgichina.demo.timeservice
+Bundle-ClassPath: bin/,
+ .

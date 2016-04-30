@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:osgi="http://www.springframework.org/schema/osgi"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+                      http://www.springframework.org/schema/osgi http://www.springframework.org/schema/osgi/spring-osgi.xsd"
+  default-autowire="byName">
+  <!--定义一个对OSGi服务的引用 -->
+  <osgi:reference id="helloWorldService" interface="org.osgichina.helloworldcxf.springdm.HelloWorldService" />
+  <!-- 定义ConsumerBean并设置了start方法是init的时候被调用 helloWorldService通过byName自动注入-->
+  <bean class="org.osgichina.helloworldcxf.springdm.client.HelloWorldServiceConsumer"
+        init-method="start">
+  </bean>
+</beans>

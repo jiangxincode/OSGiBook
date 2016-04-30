@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:osgi="http://www.springframework.org/schema/osgi"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+                      http://www.springframework.org/schema/osgi http://www.springframework.org/schema/osgi/spring-osgi.xsd">
+    
+    <!--引用MenuItem服务-->
+	<osgi:list id="menuItem" interface="org.osgichina.petstore.bootstrap.menu.MenuItem" cardinality="0..N" >
+		<osgi:listener bind-method="onBind"
+					   unbind-method="onUnbind"
+			           ref="pageHeader" />
+	</osgi:list> 
+	
+	<!--引用ActionHandlerMap服务 -->
+	<osgi:list id="actionHandlerMap" interface="org.osgichina.petstore.bootstrap.actionhandler.ActionHandlerMap" cardinality="0..N" >
+		<osgi:listener bind-method="onBind"
+					   unbind-method="onUnbind"
+			           ref="controlServlet" />
+
+	</osgi:list>
+
+	<!--引用DefaultPage服务 -->
+	<osgi:list id="defaultPage" interface="org.osgichina.petstore.bootstrap.pagetemplate.DefaultPage" cardinality="0..N">
+		<osgi:listener bind-method="onBind"
+			           unbind-method="onUnbind"
+			           ref="controlServlet" />
+	</osgi:list>	
+	
+	<osgi:service id="dataSource" ref="_dataSource" 
+		interface="javax.sql.DataSource">
+	</osgi:service>
+	
+	<osgi:reference id="webConfigMgr" interface="org.osgichina.petstore.util.WebConfigMgr" />
+
+</beans>
